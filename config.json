@@ -1,0 +1,12 @@
+{
+    "name": "Neuro Task Starter",
+    "exp_id": "neuro-task-starter",
+    "description": "A starter example task provided by brown-ccv",
+    "instructions": "TBD",
+    "url": "https://github.com/expfactory-experiments/neuro-task-starter",
+    "contributors": ["Mary McGrath",
+                     "Fernando Gelin",
+                     "Vanessa Sochat"], 
+    "time": 15,
+    "reference": ["https://github.com/brown-ccv/neuro-task-starter"]
+}
