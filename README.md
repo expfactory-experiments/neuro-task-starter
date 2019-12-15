@@ -1,11 +1,24 @@
 # Neuro Task Starter with Expfactory
 
+[![GitHub actions status](https://github.com/expfactory-experiments/neuro-task-starter/workflows/generate-static/badge.svg?branch=master)](https://github.com/expfactory-experiments/neuro-task-starter/actions?query=branch%3Amaster+workflow%3Agenerate-static)
+
 This is an automated build for an Experiment Factory repository to 
 serve the [neuro-task-starter](https://github.com/brown-ccv/neuro-task-starter) experiment. If you have a question
 or issue, please [open it](https://github.com/brown-ccv/neuro-task-starter/issues)
 at the upstream repository at brown-ccv.
 
-## Detailed Usage
+## Build Expfactory Container
+
+You can build an experiment factory container from this repository as follows:
+
+```bash
+$ mkdir -p /tmp/data
+$ docker run -v /tmp/data:/data vanessa/expfactory-builder build https://github.com/expfactory-experiments/neuro-task-starter
+$ cd /tmp/data
+$ docker build -t expfactory/neuro-task-starter .
+```
+
+## Workflow Details
 
 The following steps are run in a GitHub workflow, [generate-static.yml](.github/workflows/generate-static.yml) that
 is run on a weekly basis to update the static files from the upstream. The static
@@ -13,6 +26,7 @@ files are updated, and are pushed to the master branch here. To step through thi
 process manually, you can do the following.
 
 ### 1. Build Container
+
 A container (the [Dockerfile](Dockerfile)) is provided to help you with conversion. 
 By default, it clones from `brown-ccv/neuro-task-starter` master branch however you can modify the
 build to clone from a different branch or repository (typical for development). Here
@@ -38,6 +52,8 @@ RUN sed -i 's/const MTURK.*/const MTURK=true/' src/config/main.js
 RUN sed -i 's/const EXPFACTORY.*/const EXPFACTORY=true/' src/config/main.js 
 ```
 
+### 2. Generate Static Files
+
 Next, create a folder for output
 
 ```bash
@@ -62,3 +78,4 @@ data/
 
 The automated task will move these files to the root of the repository,
 and update the master branch.
+
