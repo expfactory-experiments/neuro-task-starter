@@ -3,20 +3,54 @@
 [![GitHub actions status](https://github.com/expfactory-experiments/neuro-task-starter/workflows/generate-static-experiment/badge.svg?branch=master)](https://github.com/expfactory-experiments/neuro-task-starter/actions?query=branch%3Amaster+workflow%3Agenerate-static-experiment)
 
 This is an automated build for an Experiment Factory repository to 
-serve the [neuro-task-starter](https://github.com/brown-ccv/neuro-task-starter) experiment. If you have a question
+serve the [brown-ccv/neuro-task-starter](https://github.com/brown-ccv/neuro-task-starter) experiment. If you have a question
 or issue, please [open it](https://github.com/brown-ccv/neuro-task-starter/issues)
 at the upstream repository at brown-ccv.
 
 ## Build Expfactory Container
 
-You can build an experiment factory container from this repository as follows:
+While we typically build from the library, you can build an experiment factory container from this repository as follows:
 
 ```bash
 $ mkdir -p /tmp/data
-$ docker run -v /tmp/data:/data vanessa/expfactory-builder build https://github.com/expfactory-experiments/neuro-task-starter
+$ cd ../
+$ docker run -v /tmp/data:/data -v $PWD/:/experiment vanessa/expfactory-builder build /experiment/neuro-task-starter
+```
+
+You'll then have your Dockerfile for your experiment container in /tmp/data. To build it:
+
+```bash
 $ cd /tmp/data
 $ docker build -t expfactory/neuro-task-starter .
 ```
+
+And then run the experiment!
+
+```bash
+$ docker run -p 80:80 expfactory/neuro-task-starter start
+Database set as filesystem
+Starting Web Server
+
+ * Starting nginx nginx
+   ...done.
+==> /scif/logs/gunicorn-access.log <==
+
+==> /scif/logs/gunicorn.log <==
+[2019-12-15 18:36:25 +0000] [1] [INFO] Starting gunicorn 20.0.4
+[2019-12-15 18:36:25 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000 (1)
+[2019-12-15 18:36:25 +0000] [1] [INFO] Using worker: sync
+[2019-12-15 18:36:25 +0000] [35] [INFO] Booting worker with pid: 35
+WARNING No user experiments selected, providing all 1
+[2019-12-15 18:38:49,840] INFO in general: New session [subid] expfactory/884c24bd-f639-4e0e-b310-cb2f52a96b33
+[2019-12-15 18:38:49,852] INFO in utils: [router] None --> neuro-task-starter [subid] expfactory/884c24bd-f639-4e0e-b310-cb2f52a96b33 [user] Vanessa
+[2019-12-15 18:38:52,675] DEBUG in main: Next experiment is neuro-task-starter
+[2019-12-15 18:38:52,676] INFO in utils: [router] neuro-task-starter --> neuro-task-starter [subid] expfactory/884c24bd-f639-4e0e-b310-cb2f52a96b33 [user] Vanessa
+[2019-12-15 18:38:52,676] DEBUG in utils: Redirecting to /experiments/neuro-task-starter
+[2019-12-15 18:38:52,693] DEBUG in utils: Rendering experiments/experiment.html
+```
+
+See the [experiment factory usage page](https://expfactory.github.io/usage) for more details on how to run
+your container, including binding data, using databases, or custom variables.
 
 ## Workflow Details
 
