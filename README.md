@@ -1,6 +1,6 @@
 # Neuro Task Starter with Expfactory
 
-[![GitHub actions status](https://github.com/expfactory-experiments/neuro-task-starter/workflows/generate-static/badge.svg?branch=master)](https://github.com/expfactory-experiments/neuro-task-starter/actions?query=branch%3Amaster+workflow%3Agenerate-static)
+[![GitHub actions status](https://github.com/expfactory-experiments/neuro-task-starter/workflows/generate-static-experiment/badge.svg?branch=master)](https://github.com/expfactory-experiments/neuro-task-starter/actions?query=branch%3Amaster+workflow%3Agenerate-static-experiment)
 
 This is an automated build for an Experiment Factory repository to 
 serve the [neuro-task-starter](https://github.com/brown-ccv/neuro-task-starter) experiment. If you have a question
