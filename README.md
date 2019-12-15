@@ -79,3 +79,21 @@ data/
 The automated task will move these files to the root of the repository,
 and update the master branch.
 
+## How does it work?
+
+The workflow takes the following environement variables:
+
+  - **FROM_REPOSITORY**: The repository with the experiment. It should have javascript modified to export files for an Expfactory experiment, along with the `convert/expfactory-it` script. The Dockerfile for the experiment is maintained in the repository here.
+  - **FROM_BRANCH**: The branch of the repository with the experiment to use.
+  - **UPDATE_BRANCH**: The branch of this repository to push static files to (typically master)
+
+Specifically, the logic works as follows:
+
+ 1. A global variable EXPFACTORY = true is added and exported from the `src/config/main.js` file.
+ 2. Logic is added to the main experiment App (App.js in the repository) to handle the case when EXPFACTORY is set to true, indicating that we save data to a /save endpoint, and finish the experiment by navigating to `/next`.
+ 3. The container here is built and clones the `${FROM_BRANCH}` of the `${FROM_REPOSITORY}`, sets `EXPFACTORY` and `MTURK` to true to ensure we aren't generating static files for electron, and installs the experiment (npm install). 
+ 4. The resulting container is then run, with entrypoint as `convert/expfactory-it` to generate static files to `/data` in the container.
+ 5. If `/data` is bound somewhere on the host (as it is in the automated action) we can then copy static files where we like.
+
+And in the case of the GitHub Workflow, all of these steps are executed to update the master branch here. 
+The experiment can then be built from it, or previewed.

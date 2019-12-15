@@ -1,10 +1,9 @@
 name: generate-static-experiment
 
 on:
-  pull_request: []
   schedule:
-    # Nightly at 2:30am 
-    - cron: 30 2 * * *
+    # Weekly on Sunday
+    - cron: 0 0 * * 0
 
 jobs:
   GenerateExpfactoryExperiment:
