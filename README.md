@@ -13,6 +13,7 @@ files are updated, and are pushed to the master branch here. To step through thi
 process manually, you can do the following.
 
 ### 1. Build Container
+
 A container (the [Dockerfile](Dockerfile)) is provided to help you with conversion. 
 By default, it clones from `brown-ccv/neuro-task-starter` master branch however you can modify the
 build to clone from a different branch or repository (typical for development). Here
@@ -37,6 +38,8 @@ this in mind if you modify the file `src/config/main.js`
 RUN sed -i 's/const MTURK.*/const MTURK=true/' src/config/main.js
 RUN sed -i 's/const EXPFACTORY.*/const EXPFACTORY=true/' src/config/main.js 
 ```
+
+### 2. Generate Static Files
 
 Next, create a folder for output
 
