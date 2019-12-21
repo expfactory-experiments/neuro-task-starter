@@ -67,7 +67,7 @@ build to clone from a different branch or repository (typical for development). 
 is a custom build:
 
 ```bash
-docker build --build-arg BRANCH=add/Dockerfile \
+docker build --build-arg BRANCH=develop-expfactory \
              --build-arg GITHUB_REPOSITORY=researchapps/neuro-task-starter \
              -t neuro-task-starter .
 ```
