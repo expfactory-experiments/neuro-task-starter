@@ -15,7 +15,6 @@ RUN echo "Cloning branch ${BRANCH} from ${GITHUB_REPOSITORY}" && \
     git clone -b ${BRANCH} https://github.com/${GITHUB_REPOSITORY} /code
 WORKDIR /code
 
-RUN sed -i 's/const MTURK.*/const MTURK=true/' src/config/main.js 
 RUN sed -i 's/const EXPFACTORY.*/const EXPFACTORY=true/' src/config/main.js 
 
 RUN npm install

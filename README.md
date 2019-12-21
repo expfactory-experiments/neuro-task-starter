@@ -82,7 +82,6 @@ Note that we set the boolean `MTURK` and `EXPFACTORY` to true with an imperfect 
 this in mind if you modify the file `src/config/main.js`
 
 ```
-RUN sed -i 's/const MTURK.*/const MTURK=true/' src/config/main.js
 RUN sed -i 's/const EXPFACTORY.*/const EXPFACTORY=true/' src/config/main.js 
 ```
 
