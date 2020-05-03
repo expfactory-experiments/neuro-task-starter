@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "./static/css/main.d5663208.chunk.css",
-    "main.js": "./static/js/main.4ef33117.chunk.js",
-    "main.js.map": "./static/js/main.4ef33117.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.3f35a6a6.js",
-    "runtime-main.js.map": "./static/js/runtime-main.3f35a6a6.js.map",
-    "static/css/2.e8dcc3b2.chunk.css": "./static/css/2.e8dcc3b2.chunk.css",
-    "static/js/2.6f5fe2a7.chunk.js": "./static/js/2.6f5fe2a7.chunk.js",
-    "static/js/2.6f5fe2a7.chunk.js.map": "./static/js/2.6f5fe2a7.chunk.js.map",
+    "main.css": "./static/css/main.0f2551ad.chunk.css",
+    "main.js": "./static/js/main.d13fb17b.chunk.js",
+    "main.js.map": "./static/js/main.d13fb17b.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.1a2dc1ca.js",
+    "runtime-main.js.map": "./static/js/runtime-main.1a2dc1ca.js.map",
+    "static/css/2.df093ce5.chunk.css": "./static/css/2.df093ce5.chunk.css",
+    "static/js/2.8680e962.chunk.js": "./static/js/2.8680e962.chunk.js",
+    "static/js/2.8680e962.chunk.js.map": "./static/js/2.8680e962.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.c53564f50f4a293803178cea4739bbbc.js": "./precache-manifest.c53564f50f4a293803178cea4739bbbc.js",
+    "precache-manifest.1981760eb7f22c317ee684f78d0241d7.js": "./precache-manifest.1981760eb7f22c317ee684f78d0241d7.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/2.e8dcc3b2.chunk.css.map": "./static/css/2.e8dcc3b2.chunk.css.map",
-    "static/css/main.d5663208.chunk.css.map": "./static/css/main.d5663208.chunk.css.map",
-    "static/js/2.6f5fe2a7.chunk.js.LICENSE.txt": "./static/js/2.6f5fe2a7.chunk.js.LICENSE.txt",
+    "static/css/2.df093ce5.chunk.css.map": "./static/css/2.df093ce5.chunk.css.map",
+    "static/css/main.0f2551ad.chunk.css.map": "./static/css/main.0f2551ad.chunk.css.map",
+    "static/js/2.8680e962.chunk.js.LICENSE.txt": "./static/js/2.8680e962.chunk.js.LICENSE.txt",
     "static/media/blue_payout_correct_10.png": "./static/media/blue_payout_correct_10.f515a81e.png",
     "static/media/blue_payout_correct_100.png": "./static/media/blue_payout_correct_100.ae2416c7.png",
     "static/media/all.css": "./static/media/fa-solid-900.ec763292.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3f35a6a6.js",
-    "static/css/2.e8dcc3b2.chunk.css",
-    "static/js/2.6f5fe2a7.chunk.js",
-    "static/css/main.d5663208.chunk.css",
-    "static/js/main.4ef33117.chunk.js"
+    "static/js/runtime-main.1a2dc1ca.js",
+    "static/css/2.df093ce5.chunk.css",
+    "static/js/2.8680e962.chunk.js",
+    "static/css/main.0f2551ad.chunk.css",
+    "static/js/main.d13fb17b.chunk.js"
   ]
 }
